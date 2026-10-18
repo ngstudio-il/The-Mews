@@ -74,7 +74,7 @@ p { margin: 0 0 1em; }
   transform: translateY(-100%); transition: transform .35s ease;
 }
 .site-header.visible { transform: none; }
-.header-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; height: 70px; }
+.header-inner { width: min(1600px, 100% - 64px); display: flex; align-items: center; justify-content: space-between; gap: 24px; height: 70px; }
 .header-logo img { height: 44px; width: auto; }
 .header-nav { display: flex; gap: 28px; }
 .header-nav a { color: var(--ink); text-decoration: none; font-size: .95rem; }
@@ -201,11 +201,13 @@ html[dir="ltr"] .field input[type="tel"] { direction: ltr; text-align: left; }
 .project-media { position: relative; align-self: stretch; overflow: hidden; clip-path: inset(0 0 0 0); transition: clip-path 1.4s cubic-bezier(.77, 0, .18, 1); }
 .project-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 2s cubic-bezier(.2, .7, .2, 1); }
 .project-panel {
-  position: relative; z-index: 1; max-width: 600px; margin-block: 80px;
-  margin-inline-start: -110px; margin-inline-end: max(16px, calc((100vw - 1200px) / 2));
-  background: var(--beige-light); padding: 64px 60px; box-shadow: 0 30px 70px rgba(52, 36, 22, .14);
+  position: relative; z-index: 1; margin-block: 80px;
+  /* ends on the header's edge (1600px wide container, 32px gutter) */
+  margin-inline-start: -110px; margin-inline-end: max(32px, calc((100vw - 1600px) / 2));
+  background: var(--beige-light); padding: 64px clamp(40px, 5vw, 96px);
   transition: opacity .9s ease .55s, transform .9s ease .55s;
 }
+.project-panel > * { max-width: 620px; }
 .project-panel h2 { font-size: clamp(1.9rem, 3.4vw, 2.8rem); }
 .project-panel p { color: var(--muted); font-size: 1.07rem; }
 .project-panel .btn { margin-top: 1rem; }
@@ -301,7 +303,7 @@ html[dir="ltr"] .project.pending .project-media { clip-path: inset(0 100% 0 0); 
   .stat:nth-child(4) { border: 0; }
 }
 @media (max-width: 640px) {
-  .header-inner { height: 68px; }
+  .header-inner { width: min(1600px, 100% - 32px); height: 68px; }
   .header-logo img { height: 42px; }
   .site-header .btn { display: none; }
   .intro { min-height: 0; }
