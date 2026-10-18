@@ -198,6 +198,11 @@ html[dir="ltr"] .field input[type="tel"] { direction: ltr; text-align: left; }
 
 /* Project: image fills half the screen, text panel overlaps it */
 .project { position: relative; display: grid; grid-template-columns: 1fr 1fr; align-items: center; min-height: min(92vh, 920px); background: var(--white); overflow: hidden; }
+.project-sketch {
+  position: absolute; z-index: 0; pointer-events: none;
+  inset-inline-end: 0; bottom: 0; width: 50%; height: 100%; object-fit: contain; object-position: bottom center;
+  opacity: .09;
+}
 .project-media { position: relative; align-self: stretch; overflow: hidden; clip-path: inset(0 0 0 0); transition: clip-path 1.4s cubic-bezier(.77, 0, .18, 1); }
 .project-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 2s cubic-bezier(.2, .7, .2, 1); }
 .project-panel {
@@ -297,6 +302,7 @@ html[dir="ltr"] .project.pending .project-media { clip-path: inset(0 100% 0 0); 
   .split-media img, #location .split-media img { height: 420px; }
   .project { grid-template-columns: 1fr; min-height: 0; }
   .project-media { height: 70vw; max-height: 560px; }
+  .project-sketch { display: none; }
   .project-panel { max-width: none; margin: -80px 16px 64px; padding: 44px 32px; }
   .cards { grid-template-columns: 1fr 1fr; }
   .stats-grid { grid-template-columns: repeat(3, 1fr); row-gap: 20px; }
