@@ -114,7 +114,7 @@ p { margin: 0 0 1em; }
 .pb-text { display: flex; flex-direction: column; text-align: start; white-space: nowrap; font-weight: 500; font-size: 1.05rem; line-height: 1.35; }
 
 .hero-tag { font-size: 1.2rem; color: var(--beige); margin-bottom: 1.6em; }
-.hero-cta-label { font-size: 1.15rem; margin-bottom: .8em; }
+.hero-cta-label { font-size: 1.15rem; font-weight: 700; margin-bottom: .8em; }
 
 .hero-form { width: 100%; grid-template-columns: 1fr 1fr auto; gap: 10px; text-align: start; }
 .hero-form .field input { background: var(--beige-light); border-color: transparent; padding: 15px 18px; }
