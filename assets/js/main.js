@@ -13,6 +13,15 @@ const onScroll = () => header.classList.toggle("scrolled", window.scrollY > 40);
 onScroll();
 window.addEventListener("scroll", onScroll, { passive: true });
 
+// Hero video: lighter portrait cut on phones, poster only for reduced motion
+const heroVideo = document.querySelector(".hero-video");
+if (heroVideo && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  const base = matchMedia("(max-width: 640px)").matches ? heroVideo.dataset.mobile : heroVideo.dataset.desktop;
+  heroVideo.innerHTML = `<source src="${base}.mp4" type="video/mp4"><source src="${base}.webm" type="video/webm">`;
+  heroVideo.load();
+  heroVideo.play().catch(() => {});
+}
+
 // WhatsApp link
 const wa = document.getElementById("whatsapp");
 if (CONFIG.whatsappNumber) {
