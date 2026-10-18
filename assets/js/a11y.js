@@ -58,7 +58,7 @@
         <button type="button" data-action="motion" aria-pressed="false"><span class="a11y-ico">❚❚</span><span data-a11y="motion"></span></button>
         <button type="button" data-action="reset"><span class="a11y-ico">↺</span><span data-a11y="reset"></span></button>
       </div>
-      <a class="a11y-statement" href="accessibility.html" data-a11y="statement"></a>
+      <a class="a11y-statement" href="${window.TML_A11Y_URL || "accessibility.html"}" data-a11y="statement"></a>
     </div>`;
   document.body.appendChild(widget);
 

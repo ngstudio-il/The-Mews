@@ -128,6 +128,7 @@ p { margin: 0 0 1em; }
 .btn-send:hover { background: var(--beige); }
 .btn-send:disabled { opacity: .6; }
 .hero-form .consent, .hero-form .form-msg { grid-column: 1 / -1; }
+.tml-hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
 .hero-form .consent { color: var(--sand); }
 .hero-form .form-msg.ok { color: #a9d8b2; }
 .hero-form .form-msg.err { color: #f2a59c; }
@@ -306,7 +307,7 @@ html[dir="ltr"] #faq { background-position: left -40px center; }
 .legal ul { padding-inline-start: 1.2em; margin: 0 0 1em; }
 .legal li { margin-bottom: .4em; }
 .legal a { color: var(--olive); }
-.legal .fill { background: #f6efd9; padding: 0 4px; }
+.legal .fill, .legal mark { background: #f6efd9; color: inherit; padding: 0 4px; }
 .legal-page .site-footer { padding-bottom: 56px; }
 
 /* Accessibility widget */

@@ -8,6 +8,8 @@ const CONFIG = {
   },
   // URL that receives the lead form as a POST (e.g. a CRM, Zapier, Make or Formspree webhook)
   formEndpoint: "",
+  // The WordPress plugin fills these in through window.TML_CONFIG
+  ...(window.TML_CONFIG || {}),
 };
 
 // Language (Hebrew in the markup, English from i18n.js)
@@ -57,8 +59,14 @@ window.addEventListener("scroll", onScroll, { passive: true });
 // Hero video: lighter portrait cut on phones, poster only for reduced motion
 const heroVideo = document.querySelector(".hero-video");
 if (heroVideo && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
-  const base = matchMedia("(max-width: 640px)").matches ? heroVideo.dataset.mobile : heroVideo.dataset.desktop;
-  heroVideo.innerHTML = `<source src="${base}.mp4" type="video/mp4"><source src="${base}.webm" type="video/webm">`;
+  const phone = matchMedia("(max-width: 640px)").matches;
+  if (heroVideo.dataset.desktopSrc) {
+    // WordPress plugin: a single MP4 per size, chosen in the admin
+    heroVideo.src = phone ? heroVideo.dataset.mobileSrc : heroVideo.dataset.desktopSrc;
+  } else {
+    const base = phone ? heroVideo.dataset.mobile : heroVideo.dataset.desktop;
+    heroVideo.innerHTML = `<source src="${base}.mp4" type="video/mp4"><source src="${base}.webm" type="video/webm">`;
+  }
   heroVideo.load();
   heroVideo.play().catch(() => {});
 }
@@ -108,6 +116,7 @@ document.querySelectorAll(".lead-form").forEach((form) => {
           body: JSON.stringify({
             name: name.value.trim(),
             phone: phone.value.trim(),
+            website: form.elements.website ? form.elements.website.value : "",
             project: "The Mews Residences",
             language: lang,
             page: location.href,
@@ -180,4 +189,5 @@ if ("IntersectionObserver" in window) {
   });
 }
 
-document.getElementById("year").textContent = new Date().getFullYear();
+const year = document.getElementById("year");
+if (year) year.textContent = new Date().getFullYear();
