@@ -10,9 +10,9 @@
   --muted: #6f655d;
   --white: #fff;
   --radius: 2px;
-  --serif: "Noto Sans Hebrew", Arial, sans-serif;
+  --serif: "IBM Plex Sans Hebrew", Arial, sans-serif;
   --latin: "Marcellus", Georgia, serif;
-  --sans: "Noto Sans Hebrew", Arial, sans-serif;
+  --sans: "IBM Plex Sans Hebrew", Arial, sans-serif;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
