@@ -266,7 +266,13 @@ html[dir="ltr"] .project.pending .project-media { clip-path: inset(0 100% 0 0); 
 .faq summary::after { content: "+"; position: absolute; inset-inline-end: 24px; top: 50%; transform: translateY(-50%); font-size: 1.5rem; color: var(--olive); transition: transform .25s; }
 .faq details[open] summary { color: var(--olive); }
 .faq details[open] summary::after { transform: translateY(-50%) rotate(45deg); }
-.faq details p { padding: 0 24px 22px; margin: 0; color: var(--muted); }
+.faq details p { padding: 0 24px 22px; margin: 0; color: var(--muted); font-size: 1.12rem; }
+.faq-sketch {
+  position: absolute; z-index: 0; pointer-events: none;
+  left: 50%; top: 40px; bottom: 0; transform: translateX(-50%); height: calc(100% - 40px); width: auto; max-width: none;
+  opacity: .08;
+}
+#faq > .container { position: relative; z-index: 1; }
 
 /* CTA: same composition as the hero, over a fixed (parallax) night render */
 .cta { position: relative; color: var(--white); padding: 120px 0; overflow: hidden; }
