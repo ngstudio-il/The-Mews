@@ -38,19 +38,16 @@ document.querySelectorAll(".lead-form").forEach((form) => {
     e.preventDefault();
     const name = form.elements.name;
     const phone = form.elements.phone;
-    const email = form.elements.email;
     const consent = form.elements.consent;
 
     const okName = name.value.trim().length >= 2;
     const okPhone = /^[+\d][\d\s-]{7,}$/.test(phone.value.trim());
-    const okEmail = !email.value.trim() || /^\S+@\S+\.\S+$/.test(email.value.trim());
     name.classList.toggle("invalid", !okName);
     phone.classList.toggle("invalid", !okPhone);
-    email.classList.toggle("invalid", !okEmail);
     consent.closest(".consent").classList.toggle("invalid", !consent.checked);
 
     msg.className = "form-msg";
-    if (!okName || !okPhone || !okEmail || !consent.checked) {
+    if (!okName || !okPhone || !consent.checked) {
       msg.textContent = "נא למלא שם וטלפון תקינים ולאשר את התנאים";
       msg.classList.add("err");
       return;
@@ -66,7 +63,6 @@ document.querySelectorAll(".lead-form").forEach((form) => {
           body: JSON.stringify({
             name: name.value.trim(),
             phone: phone.value.trim(),
-            email: email.value.trim(),
             project: "The Mews Residences",
             page: location.href,
           }),

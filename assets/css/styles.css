@@ -107,6 +107,8 @@ p { margin: 0 0 1em; }
   width: 100%; padding: 14px 16px; font: 400 1rem var(--sans);
   border: 1px solid #d8d1ca; background: var(--beige-light); border-radius: var(--radius); color: var(--ink);
 }
+.field input[type="tel"] { direction: ltr; text-align: right; }
+.field input[type="tel"]::placeholder { direction: rtl; }
 .field input:focus { outline: none; border-color: var(--brown); background: var(--white); }
 .field input.invalid { border-color: #b3261e; }
 .consent { display: flex; gap: 8px; align-items: flex-start; font-size: .85rem; color: var(--muted); }
