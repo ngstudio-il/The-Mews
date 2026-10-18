@@ -64,6 +64,8 @@ p { margin: 0 0 1em; }
   transition: background .25s, color .25s, transform .25s;
 }
 .btn:hover { background: var(--brown-dark); transform: translateY(-1px); }
+.btn-olive { background: var(--olive); border-color: var(--olive); }
+.btn-olive:hover { background: var(--olive-dark); }
 .btn-small { padding: .55em 1.4em; font-size: .9rem; }
 .btn-block { width: 100%; }
 
