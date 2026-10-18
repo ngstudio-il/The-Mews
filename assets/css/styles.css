@@ -127,7 +127,13 @@ p { margin: 0 0 1em; }
 .hero-form .consent.invalid { color: #f2a59c; }
 .hero-form .form-msg.ok { color: #a9d8b2; }
 .hero-form .form-msg.err { color: #f2a59c; }
-.hero-logo { width: 170px; margin-top: 22px; }
+.hero-brands { display: flex; align-items: center; justify-content: center; gap: 28px; margin-top: 26px; }
+.hero-logo { width: 170px; }
+.brands-divider { align-self: stretch; width: 1px; background: rgba(200,184,166,.35); }
+.hero-dev { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.dev-logo { width: 190px; }
+.hero-dev p { margin: 0; font-size: .92rem; line-height: 1.5; color: var(--beige); text-align: center; }
+.hero-dev b { font-weight: 600; color: var(--white); }
 
 .hero-media { position: relative; padding-top: 52px; min-width: 0; }
 .media-badge {
@@ -284,6 +290,11 @@ html[dir="ltr"] .field input[type="tel"] { direction: ltr; text-align: left; }
   .pb-text span:last-child { order: 2; }
   .hero-tag { font-size: 1.05rem; }
   .hero-form { grid-template-columns: 1fr; }
+  .hero-brands { flex-direction: column; gap: 18px; }
+  .brands-divider { align-self: center; width: 60px; height: 1px; }
+  .hero-logo { width: 140px; }
+  .dev-logo { width: 170px; }
+  .hero-dev p { font-size: .85rem; }
   .btn-send { padding: 15px; }
   .media-box { aspect-ratio: 4 / 5; }
   .media-badge { padding: 12px 22px; }

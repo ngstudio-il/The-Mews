@@ -16,6 +16,7 @@ const I18N_EN = {
   "hero.secure": "to secure your apartment",
   "hero.tag": "Launch prices for first buyers · Only 30 two-bedroom apartments",
   "hero.formLabel": "Leave your details to speak with a project representative:",
+  "hero.dev": "Cyprus's largest developer<br><b>500+</b> projects in Limassol · <b>45+</b> years of reputation",
   "hero.disclaimer": "Renders are for illustration only. Price and terms are subject to the purchase agreement. E&amp;OE.",
 
   "form.name": "Full name",
@@ -53,8 +54,8 @@ const I18N_EN = {
   "invest.c4": "Limassol is a leading business and tourism hub in Cyprus, with steady demand for two-bedroom apartments.",
   "invest.c5t": "An EU Member State",
   "invest.c5": "Invest in euros, in a European Union member state, a short flight from Israel.",
-  "invest.c6t": "Established Developer",
-  "invest.c6": "The project is developed by D. Zavos Group, a well-known land and building developer in Limassol.",
+  "invest.c6t": "Cyprus's Largest Developer",
+  "invest.c6": "The project is developed by D. Zavos Group, the largest developer in Cyprus, with more than 500 projects in Limassol and over 45 years of reputation.",
 
   "gallery.title": "Bright Spaces for Everyday Comfort",
 
