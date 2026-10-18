@@ -144,7 +144,7 @@ document.addEventListener("keydown", (e) => {
 });
 
 // Reveal on scroll
-const revealTargets = document.querySelectorAll(".section-head, .split-text, .split-media, .card, .g-item, .steps li, .faq details, .cta-text");
+const revealTargets = document.querySelectorAll(".section-head, .split-text, .split-media, .card, .g-item, .faq details, .cta-text");
 if ("IntersectionObserver" in window) {
   const io = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {

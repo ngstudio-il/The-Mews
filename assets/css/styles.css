@@ -9,7 +9,6 @@
   --espresso: #22170e;
   --olive: #3c4733;
   --olive-dark: #2f3828;
-  --olive-mist: #d7dbcc;
   --ink: #2b2219;
   --muted: #6f655d;
   --white: #fff;
@@ -187,8 +186,6 @@ html[dir="ltr"] .field input[type="tel"] { direction: ltr; text-align: left; }
 .section-head h2, .split-text h2 { font-size: clamp(1.9rem, 3.4vw, 2.8rem); }
 .section-head p { color: var(--muted); font-size: 1.1rem; }
 .section-brown .section-head p { color: var(--beige); }
-.section-olive { background: var(--olive); color: var(--white); }
-.section-olive .eyebrow { color: var(--sand); }
 .section-icon { width: 54px; margin-bottom: 18px; }
 
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
@@ -220,18 +217,8 @@ html[dir="ltr"] .field input[type="tel"] { direction: ltr; text-align: left; }
 .distances b { font-family: var(--serif); font-weight: 500; font-size: 1.6rem; color: var(--brown); line-height: 1.2; }
 .distances span { color: var(--muted); }
 
-/* Steps */
-.steps { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; counter-reset: s; }
-.steps li { text-align: center; padding: 0 12px; }
-.steps span { display: inline-grid; place-items: center; width: 64px; height: 64px; border: 1px solid var(--brown); color: var(--brown); font-family: var(--latin); font-size: 1.6rem; border-radius: 50%; margin-bottom: 18px; }
-.steps h3 { font-size: 1.4rem; color: var(--brown); }
-.steps p { color: var(--muted); }
-.section-olive .steps span { border-color: var(--sand); color: var(--sand); }
-.section-olive .steps h3 { color: var(--white); }
-.section-olive .steps p { color: var(--olive-mist); }
-
 /* FAQ */
-.faq details { background: var(--white); margin-bottom: 10px; border-radius: var(--radius); }
+.faq details { background: var(--beige-light); margin-bottom: 10px; border-radius: var(--radius); }
 .faq summary { cursor: pointer; list-style: none; padding: 20px 24px; font-weight: 500; font-size: 1.08rem; position: relative; padding-inline-end: 56px; }
 .faq summary::-webkit-details-marker { display: none; }
 .faq summary::after { content: "+"; position: absolute; inset-inline-end: 24px; top: 50%; transform: translateY(-50%); font-size: 1.5rem; color: var(--olive); transition: transform .25s; }
@@ -311,7 +298,7 @@ html[dir="ltr"] .field input[type="tel"] { direction: ltr; text-align: left; }
   .hero-media { padding-top: 40px; }
   .form-card { padding: 28px 20px 20px; }
   .section { padding: 72px 0; }
-  .cards, .steps { grid-template-columns: 1fr; }
+  .cards { grid-template-columns: 1fr; }
   .stats-grid { grid-template-columns: 1fr 1fr; }
   .stat { border: 0; }
   .stat:last-child { grid-column: span 2; }

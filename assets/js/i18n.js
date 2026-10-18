@@ -68,14 +68,6 @@ const I18N_EN = {
   "loc.d5v": "14 km", "loc.d5": "From the resort",
   "loc.d6v": "62 km", "loc.d6": "From the airport",
 
-  "steps.title": "How Does It Work?",
-  "steps.s1t": "Leave Your Details",
-  "steps.s1": "Our advisor will get back to you with the price list, floor plans and full details.",
-  "steps.s2t": "Choose an Apartment",
-  "steps.s2": "Pick the apartment, floor and orientation that suit you.",
-  "steps.s3t": "Pay €30,000",
-  "steps.s3": "Secure your apartment with a payment of only €30,000.",
-
   "faq.title": "Frequently Asked Questions",
   "faq.q1": "Where is the project located?",
   "faq.a1": "The project is in Mesa Geitonia, Limassol, Cyprus: 50 metres from amenities and only 1.5 km from the beach.",
