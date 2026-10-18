@@ -39,6 +39,7 @@ function setLang(next) {
   });
   document.querySelectorAll(".form-msg").forEach((m) => { m.textContent = ""; m.className = "form-msg"; });
   updateWhatsApp();
+  document.dispatchEvent(new Event("langchange"));
   try { localStorage.setItem("lang", lang); } catch {}
 }
 

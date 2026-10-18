@@ -84,6 +84,8 @@ const I18N_EN = {
   "cta.p": "Pay only <strong>€30,000</strong> to secure an apartment in the heart of Limassol. Leave your details and we will get back to you shortly.",
   "cta.formTitle": "Get the Price List and Floor Plans",
 
+  "footer.privacy": "Privacy Policy",
+  "footer.a11y": "Accessibility Statement",
   "footer.disclaimer": "The information and renders on this page are indicative only and do not constitute a contract or offer. The finished product may vary. The Mews Residences is a marketing name.",
   "mobileCta": "Only €30,000 – Learn More",
 };
