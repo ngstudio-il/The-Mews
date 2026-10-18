@@ -87,26 +87,27 @@ p { margin: 0 0 1em; }
 .site-header .lang-toggle { color: var(--brown); }
 
 /* Hero */
-.hero { background: var(--espresso); color: var(--white); padding: 40px 0 56px; }
-.hero-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 56px; align-items: center; }
+.hero { background: var(--espresso); color: var(--white); padding: 32px 0 40px; min-height: 100vh; min-height: 100svh; display: flex; align-items: center; }
+.hero > .container { width: min(1600px, 100% - 64px); }
+.hero-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(40px, 5vw, 96px); align-items: center; }
 .hero-main { display: flex; flex-direction: column; align-items: center; text-align: center; min-width: 0; }
 .hero-topbar { align-self: stretch; display: flex; justify-content: flex-start; margin-bottom: 24px; }
 .hero-topbar .lang-toggle { color: var(--beige); }
 .hero h1 { margin: 0 0 .5em; line-height: 1.1; text-wrap: balance; }
-.hero h1 .h-light { display: block; font-weight: 300; font-size: clamp(2rem, 3.6vw, 3.4rem); }
-.hero h1 .h-bold { display: block; font-weight: 700; font-size: clamp(2.2rem, 3.8vw, 3.7rem); }
+.hero h1 .h-light { display: block; font-weight: 300; font-size: clamp(2rem, 3.4vw, 4.4rem); }
+.hero h1 .h-bold { display: block; font-weight: 700; font-size: clamp(2.2rem, 3.6vw, 4.8rem); }
 
 .price-box {
   display: inline-flex; align-items: center; gap: 18px;
   background: var(--sand); color: var(--espresso); padding: 10px 34px 12px; margin-bottom: 22px;
 }
-.price-box b { font-family: var(--latin); font-weight: 400; font-size: clamp(2.8rem, 5vw, 4.4rem); line-height: 1; letter-spacing: .01em; }
-.pb-text { display: flex; flex-direction: column; text-align: start; white-space: nowrap; font-weight: 500; font-size: 1.05rem; line-height: 1.35; }
+.price-box b { font-family: var(--latin); font-weight: 400; font-size: clamp(2.8rem, 4.6vw, 5.6rem); line-height: 1; letter-spacing: .01em; }
+.pb-text { display: flex; flex-direction: column; text-align: start; white-space: nowrap; font-weight: 500; font-size: clamp(1rem, 1.05vw, 1.3rem); line-height: 1.35; }
 
-.hero-tag { font-size: 1.2rem; color: var(--beige); margin-bottom: 1.6em; }
-.hero-cta-label { font-size: 1.15rem; margin-bottom: .8em; }
+.hero-tag { font-size: clamp(1.05rem, 1.1vw, 1.4rem); color: var(--beige); margin-bottom: 1.6em; }
+.hero-cta-label { font-size: clamp(1.05rem, 1.05vw, 1.35rem); margin-bottom: .8em; }
 
-.hero-form { width: 100%; grid-template-columns: 1fr 1fr auto; gap: 10px; text-align: start; }
+.hero-form { width: 100%; max-width: 760px; grid-template-columns: 1fr 1fr auto; gap: 10px; text-align: start; }
 .hero-form .field input { background: var(--beige-light); border-color: transparent; padding: 15px 18px; }
 .hero-form .field input:focus { border-color: var(--sand); }
 .btn-send {
@@ -120,7 +121,7 @@ p { margin: 0 0 1em; }
 .hero-form .consent.invalid { color: #f2a59c; }
 .hero-form .form-msg.ok { color: #a9d8b2; }
 .hero-form .form-msg.err { color: #f2a59c; }
-.hero-logo { width: 170px; margin-top: 22px; }
+.hero-logo { width: clamp(150px, 11vw, 210px); margin-top: 22px; }
 
 .hero-media { position: relative; padding-top: 52px; min-width: 0; }
 .media-badge {
@@ -128,7 +129,7 @@ p { margin: 0 0 1em; }
   background: var(--beige-light); padding: 18px 30px; box-shadow: 0 14px 30px rgba(0,0,0,.35);
 }
 .media-badge img { width: 130px; }
-.media-box { position: relative; aspect-ratio: 5 / 4; max-width: 100%; overflow: hidden; background: var(--beige); }
+.media-box { position: relative; aspect-ratio: 5 / 4; max-width: 100%; max-height: calc(100vh - 170px); width: 100%; margin-inline: auto; overflow: hidden; background: var(--beige); }
 .hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .hero-disclaimer { font-size: .85rem; color: var(--sand); text-align: center; margin: 14px 0 0; }
 
@@ -267,7 +268,8 @@ html[dir="ltr"] .field input[type="tel"] { direction: ltr; text-align: left; }
   .header-inner { height: 68px; }
   .header-logo img { height: 42px; }
   .site-header .btn { display: none; }
-  .hero { padding: 20px 0 40px; }
+  .hero { padding: 20px 0 40px; min-height: 0; }
+  .hero > .container { width: min(1200px, 100% - 32px); }
   .hero-topbar { margin-bottom: 16px; }
   .price-box { flex-direction: column; gap: 2px; padding: 10px 28px 12px; }
   .pb-text { display: contents; font-size: .95rem; }
