@@ -10,9 +10,9 @@
   --muted: #6f655d;
   --white: #fff;
   --radius: 2px;
-  --serif: "Frank Ruhl Libre", "Marcellus", Georgia, serif;
+  --serif: "Noto Sans Hebrew", Arial, sans-serif;
   --latin: "Marcellus", Georgia, serif;
-  --sans: "Heebo", Arial, sans-serif;
+  --sans: "Noto Sans Hebrew", Arial, sans-serif;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -28,7 +28,7 @@ body {
 }
 img { max-width: 100%; display: block; }
 a { color: inherit; }
-h1, h2, h3 { font-family: var(--serif); font-weight: 400; line-height: 1.25; margin: 0 0 .6em; }
+h1, h2, h3 { font-family: var(--serif); font-weight: 500; line-height: 1.25; margin: 0 0 .6em; }
 p { margin: 0 0 1em; }
 
 .container { width: min(1200px, 100% - 32px); margin-inline: auto; }
