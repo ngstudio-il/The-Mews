@@ -2,14 +2,54 @@
 const CONFIG = {
   // WhatsApp number in international format, digits only (e.g. "972501234567")
   whatsappNumber: "",
-  whatsappText: "היי, אשמח לקבל פרטים על פרויקט The Mews בלימסול",
+  whatsappText: {
+    he: "היי, אשמח לקבל פרטים על פרויקט The Mews בלימסול",
+    en: "Hi, I'd like details about The Mews project in Limassol",
+  },
   // URL that receives the lead form as a POST (e.g. a CRM, Zapier, Make or Formspree webhook)
   formEndpoint: "",
 };
 
-// Header style on scroll
+// Language (Hebrew in the markup, English from i18n.js)
+let lang = "he";
+const t = (key) => (lang === "en" ? I18N_EN : I18N_HE)[key] ?? key;
+const metaDescription = document.querySelector('meta[name="description"]');
+const heText = { "meta.title": document.title, "meta.description": metaDescription.content };
+
+function setLang(next) {
+  lang = next;
+  const dict = lang === "en" ? I18N_EN : heText;
+  document.querySelectorAll("[data-i18n]").forEach((el) => {
+    const key = el.dataset.i18n;
+    if (!(key in heText)) heText[key] = el.innerHTML;
+    if (key in dict) el.innerHTML = dict[key];
+  });
+  document.querySelectorAll("[data-i18n-ph]").forEach((el) => {
+    const key = el.dataset.i18nPh;
+    if (!(key in heText)) heText[key] = el.placeholder;
+    if (key in dict) el.placeholder = dict[key];
+  });
+  document.title = dict["meta.title"];
+  metaDescription.content = dict["meta.description"];
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === "en" ? "ltr" : "rtl";
+  document.querySelectorAll("[data-lang-toggle]").forEach((b) => {
+    b.textContent = lang === "en" ? "עברית" : "EN";
+    b.setAttribute("aria-label", lang === "en" ? "החלפה לעברית" : "Switch to English");
+  });
+  document.querySelectorAll(".form-msg").forEach((m) => { m.textContent = ""; m.className = "form-msg"; });
+  updateWhatsApp();
+  try { localStorage.setItem("lang", lang); } catch {}
+}
+
+document.querySelectorAll("[data-lang-toggle]").forEach((b) =>
+  b.addEventListener("click", () => setLang(lang === "en" ? "he" : "en"))
+);
+
+// Header appears once the hero is scrolled past
 const header = document.querySelector(".site-header");
-const onScroll = () => header.classList.toggle("scrolled", window.scrollY > 40);
+const hero = document.querySelector(".hero");
+const onScroll = () => header.classList.toggle("visible", window.scrollY > hero.offsetHeight - 120);
 onScroll();
 window.addEventListener("scroll", onScroll, { passive: true });
 
@@ -24,12 +64,18 @@ if (heroVideo && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
 
 // WhatsApp link
 const wa = document.getElementById("whatsapp");
-if (CONFIG.whatsappNumber) {
-  wa.href = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(CONFIG.whatsappText)}`;
-} else {
-  wa.href = "#contact";
-  wa.removeAttribute("target");
+function updateWhatsApp() {
+  if (CONFIG.whatsappNumber) {
+    wa.href = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(CONFIG.whatsappText[lang])}`;
+  } else {
+    wa.href = "#contact";
+    wa.removeAttribute("target");
+  }
 }
+
+let savedLang = null;
+try { savedLang = localStorage.getItem("lang"); } catch {}
+setLang(location.hash === "#en" || savedLang === "en" ? "en" : "he");
 
 // Lead forms
 document.querySelectorAll(".lead-form").forEach((form) => {
@@ -48,7 +94,7 @@ document.querySelectorAll(".lead-form").forEach((form) => {
 
     msg.className = "form-msg";
     if (!okName || !okPhone || !consent.checked) {
-      msg.textContent = "נא למלא שם וטלפון תקינים ולאשר את התנאים";
+      msg.textContent = t("form.invalid");
       msg.classList.add("err");
       return;
     }
@@ -64,16 +110,17 @@ document.querySelectorAll(".lead-form").forEach((form) => {
             name: name.value.trim(),
             phone: phone.value.trim(),
             project: "The Mews Residences",
+            language: lang,
             page: location.href,
           }),
         });
         if (!res.ok) throw new Error(res.status);
       }
       form.reset();
-      msg.textContent = "תודה! הפרטים התקבלו ונחזור אליכם בהקדם.";
+      msg.textContent = t("form.ok");
       msg.classList.add("ok");
     } catch {
-      msg.textContent = "אירעה שגיאה בשליחה, נסו שוב או פנו אלינו בוואטסאפ.";
+      msg.textContent = t("form.error");
       msg.classList.add("err");
     } finally {
       button.disabled = false;

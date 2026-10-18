@@ -16,64 +16,72 @@
 </head>
 <body>
 
-  <!-- Header -->
-  <header class="site-header" id="top">
+  <!-- Header (appears after scrolling past the hero) -->
+  <header class="site-header">
     <div class="container header-inner">
       <a href="#top" class="header-logo" aria-label="The Mews Residences">
-        <img src="assets/img/logo-white.svg" alt="The Mews Residences" class="logo-light">
-        <img src="assets/img/logo-brown.svg" alt="" class="logo-dark" aria-hidden="true">
+        <img src="assets/img/logo-brown.svg" alt="The Mews Residences">
       </a>
-      <nav class="header-nav" aria-label="ניווט ראשי">
-        <a href="#project">הפרויקט</a>
-        <a href="#invest">למה להשקיע</a>
-        <a href="#gallery">גלריה</a>
-        <a href="#location">מיקום</a>
-        <a href="#faq">שאלות נפוצות</a>
+      <nav class="header-nav" aria-label="Main">
+        <a href="#project" data-i18n="nav.project">הפרויקט</a>
+        <a href="#invest" data-i18n="nav.invest">למה להשקיע</a>
+        <a href="#gallery" data-i18n="nav.gallery">גלריה</a>
+        <a href="#location" data-i18n="nav.location">מיקום</a>
+        <a href="#faq" data-i18n="nav.faq">שאלות נפוצות</a>
       </nav>
-      <a href="#contact" class="btn btn-small">לקבלת מחירון</a>
+      <div class="header-actions">
+        <button type="button" class="lang-toggle" data-lang-toggle>EN</button>
+        <a href="#contact" class="btn btn-small" data-i18n="nav.cta">לקבלת מחירון</a>
+      </div>
     </div>
   </header>
 
   <!-- Hero -->
-  <section class="hero">
-    <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/img/hero-poster.jpg"
-      data-desktop="assets/video/hero-desktop" data-mobile="assets/video/hero-mobile" aria-hidden="true"></video>
-    <div class="hero-overlay"></div>
-    <div class="container hero-inner">
-      <div class="hero-text">
-        <span class="eyebrow">לימסול · קפריסין · Mesa Geitonia</span>
-        <h1>דירה משלכם בלב לימסול<br><span>משלמים רק <strong>€30,000</strong></span></h1>
-        <p class="hero-sub">The Mews Residences – פרויקט בוטיק חדש של 30 דירות 2 חדרי שינה, במיקום מרכזי במרחק דקות מהים ומלב העיר.</p>
-        <ul class="hero-points">
-          <li>מיקום מרכזי – הכל במרחק הליכה</li>
-          <li>1.5 ק"מ בלבד מחוף הים</li>
-          <li>מחירי השקה לרכישה על הנייר</li>
-        </ul>
-      </div>
-
-      <div class="form-card" id="hero-form">
-        <div class="price-badge">
-          <small>משלמים רק</small>
-          <b>€30,000</b>
-          <small>ומבטיחים דירה</small>
+  <section class="hero" id="top">
+    <div class="container hero-grid">
+      <div class="hero-main">
+        <div class="hero-topbar">
+          <button type="button" class="lang-toggle" data-lang-toggle>EN</button>
         </div>
-        <h2>השאירו פרטים לקבלת מחירון ותוכניות</h2>
-        <form class="lead-form" novalidate>
+        <h1>
+          <span class="h-light" data-i18n="hero.l1">להשקיע היום</span>
+          <span class="h-bold" data-i18n="hero.l2">בלב לימסול, קפריסין</span>
+        </h1>
+        <div class="price-box">
+          <span class="pb-text">
+            <span data-i18n="hero.pay">משלמים רק</span>
+            <span data-i18n="hero.secure">ומבטיחים דירה</span>
+          </span>
+          <b>€30,000</b>
+        </div>
+        <p class="hero-tag" data-i18n="hero.tag">מחירי השקה לרוכשים הראשונים · 30 דירות 2 חדרי שינה בלבד</p>
+        <p class="hero-cta-label" data-i18n="hero.formLabel">לשיחה עם נציג/ה מטעם הפרויקט השאירו פרטים:</p>
+        <form class="lead-form hero-form" id="hero-form" novalidate>
           <label class="field">
-            <span class="sr-only">שם מלא</span>
-            <input type="text" name="name" placeholder="שם מלא *" autocomplete="name" required>
+            <span class="sr-only" data-i18n="form.name">שם מלא</span>
+            <input type="text" id="hero-name" name="name" placeholder="שם מלא *" data-i18n-ph="form.namePh" autocomplete="name" required>
           </label>
           <label class="field">
-            <span class="sr-only">טלפון</span>
-            <input type="tel" name="phone" placeholder="טלפון *" autocomplete="tel" inputmode="tel" required>
+            <span class="sr-only" data-i18n="form.phone">טלפון</span>
+            <input type="tel" id="hero-phone" name="phone" placeholder="טלפון *" data-i18n-ph="form.phonePh" autocomplete="tel" inputmode="tel" required>
           </label>
+          <button type="submit" class="btn-send" data-i18n="form.send">שליחה</button>
           <label class="consent">
-            <input type="checkbox" name="consent" required>
-            <span>אני מאשר/ת קבלת פניות ומידע שיווקי</span>
+            <input type="checkbox" id="hero-consent" name="consent" required>
+            <span data-i18n="form.consent">אני מאשר/ת קבלת פניות ומידע שיווקי</span>
           </label>
-          <button type="submit" class="btn btn-block">שלחו לי פרטים</button>
           <p class="form-msg" role="status" aria-live="polite"></p>
         </form>
+        <img src="assets/img/logo-white.svg" alt="The Mews Residences" class="hero-logo">
+      </div>
+
+      <div class="hero-media">
+        <div class="media-badge"><img src="assets/img/logo-brown.svg" alt=""></div>
+        <div class="media-box">
+          <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/img/hero-poster.jpg"
+            data-desktop="assets/video/hero-desktop" data-mobile="assets/video/hero-mobile" aria-hidden="true"></video>
+        </div>
+        <p class="hero-disclaimer" data-i18n="hero.disclaimer">ההדמיות להמחשה בלבד. המחיר והתנאים כפופים להסכם הרכישה. ט.ל.ח.</p>
       </div>
     </div>
   </section>
@@ -81,11 +89,11 @@
   <!-- Stats strip -->
   <section class="stats">
     <div class="container stats-grid">
-      <div class="stat"><b>30</b><span>דירות בלבד</span></div>
-      <div class="stat"><b>5</b><span>קומות</span></div>
-      <div class="stat"><b>2</b><span>חדרי שינה בכל דירה</span></div>
-      <div class="stat"><b>1.5<small>ק"מ</small></b><span>מחוף הים</span></div>
-      <div class="stat"><b>€30K</b><span>תשלום בלבד לכניסה</span></div>
+      <div class="stat"><b>30</b><span data-i18n="stats.units">דירות בלבד</span></div>
+      <div class="stat"><b>5</b><span data-i18n="stats.floors">קומות</span></div>
+      <div class="stat"><b>2</b><span data-i18n="stats.beds">חדרי שינה בכל דירה</span></div>
+      <div class="stat"><b>1.5<small data-i18n="unit.km">ק"מ</small></b><span data-i18n="stats.beach">מחוף הים</span></div>
+      <div class="stat"><b>€30K</b><span data-i18n="stats.entry">תשלום בלבד לכניסה</span></div>
     </div>
   </section>
 
@@ -93,15 +101,15 @@
   <section class="section" id="project">
     <div class="container split">
       <div class="split-media">
-        <img src="assets/img/facade.jpg" alt="הכניסה לפרויקט The Mews" loading="lazy">
+        <img src="assets/img/facade.jpg" alt="The Mews entrance" loading="lazy">
       </div>
       <div class="split-text">
         <img src="assets/img/icon-brown.svg" alt="" class="section-icon" aria-hidden="true">
         <span class="eyebrow dark">The Development</span>
-        <h2>מעוצב לחיים מודרניים</h2>
-        <p>The Mews Residences הוא פרויקט מגורים עכשווי בן חמש קומות, הכולל 30 דירות של 2 חדרי שינה. קווים אדריכליים נקיים, גימורים אלגנטיים ותכנון פונקציונלי – פרויקט שתוכנן עבור מי שמחפש בית איכותי ועבור משקיעים המחפשים ערך לטווח ארוך.</p>
-        <p>כל דירה תוכננה למקסם אור טבעי, נוחות ופרקטיות. חומרים איכותיים, מפרט מודרני וגימורים שנבחרו בקפידה יוצרים חללי מגורים מזמינים – בין אם כבית ובין אם כנכס להשקעה.</p>
-        <a href="#contact" class="btn">אני רוצה לשמוע עוד</a>
+        <h2 data-i18n="project.title">מעוצב לחיים מודרניים</h2>
+        <p data-i18n="project.p1">The Mews Residences הוא פרויקט מגורים עכשווי בן חמש קומות, הכולל 30 דירות של 2 חדרי שינה. קווים אדריכליים נקיים, גימורים אלגנטיים ותכנון פונקציונלי – פרויקט שתוכנן עבור מי שמחפש בית איכותי ועבור משקיעים המחפשים ערך לטווח ארוך.</p>
+        <p data-i18n="project.p2">כל דירה תוכננה למקסם אור טבעי, נוחות ופרקטיות. חומרים איכותיים, מפרט מודרני וגימורים שנבחרו בקפידה יוצרים חללי מגורים מזמינים – בין אם כבית ובין אם כנכס להשקעה.</p>
+        <a href="#contact" class="btn" data-i18n="project.cta">אני רוצה לשמוע עוד</a>
       </div>
     </div>
   </section>
@@ -112,39 +120,39 @@
     <div class="container">
       <div class="section-head">
         <span class="eyebrow">A Smart Investment</span>
-        <h2>למה דווקא The Mews?</h2>
-        <p>מיקום מרכזי, עיצוב עכשווי וביקוש גבוה לדיור באחד האזורים המבוקשים בלימסול.</p>
+        <h2 data-i18n="invest.title">למה דווקא The Mews?</h2>
+        <p data-i18n="invest.sub">מיקום מרכזי, עיצוב עכשווי וביקוש גבוה לדיור באחד האזורים המבוקשים בלימסול.</p>
       </div>
       <div class="cards">
         <article class="card">
           <span class="card-num">01</span>
-          <h3>כניסה בהון נמוך</h3>
-          <p>משלמים רק €30,000 ומבטיחים דירה בפרויקט – הדרך הנגישה להיכנס לשוק הנדל"ן בלימסול.</p>
+          <h3 data-i18n="invest.c1t">כניסה בהון נמוך</h3>
+          <p data-i18n="invest.c1">משלמים רק €30,000 ומבטיחים דירה בפרויקט – הדרך הנגישה להיכנס לשוק הנדל"ן בלימסול.</p>
         </article>
         <article class="card">
           <span class="card-num">02</span>
-          <h3>מיקום מרכזי</h3>
-          <p>בלב Mesa Geitonia: בתי ספר, סופרמרקטים, בתי קפה ומסעדות במרחק הליכה, והים, הכביש המהיר ומרכז העיר במרחק דקות.</p>
+          <h3 data-i18n="invest.c2t">מיקום מרכזי</h3>
+          <p data-i18n="invest.c2">בלב Mesa Geitonia: בתי ספר, סופרמרקטים, בתי קפה ומסעדות במרחק הליכה, והים, הכביש המהיר ומרכז העיר במרחק דקות.</p>
         </article>
         <article class="card">
           <span class="card-num">03</span>
-          <h3>רכישה על הנייר</h3>
-          <p>רכישה בשלב מוקדם של הפרויקט, עם פוטנציאל עליית ערך עד להשלמת הבנייה ולאורך זמן.</p>
+          <h3 data-i18n="invest.c3t">רכישה על הנייר</h3>
+          <p data-i18n="invest.c3">רכישה בשלב מוקדם של הפרויקט, עם פוטנציאל עליית ערך עד להשלמת הבנייה ולאורך זמן.</p>
         </article>
         <article class="card">
           <span class="card-num">04</span>
-          <h3>ביקוש גבוה להשכרה</h3>
-          <p>לימסול היא מרכז עסקי ותיירותי מוביל בקפריסין, עם ביקוש מתמיד לדירות 2 חדרי שינה.</p>
+          <h3 data-i18n="invest.c4t">ביקוש גבוה להשכרה</h3>
+          <p data-i18n="invest.c4">לימסול היא מרכז עסקי ותיירותי מוביל בקפריסין, עם ביקוש מתמיד לדירות 2 חדרי שינה.</p>
         </article>
         <article class="card">
           <span class="card-num">05</span>
-          <h3>מדינה באיחוד האירופי</h3>
-          <p>השקעה ביורו, במדינה חברה באיחוד האירופי, טיסה קצרה מישראל.</p>
+          <h3 data-i18n="invest.c5t">מדינה באיחוד האירופי</h3>
+          <p data-i18n="invest.c5">השקעה ביורו, במדינה חברה באיחוד האירופי, טיסה קצרה מישראל.</p>
         </article>
         <article class="card">
           <span class="card-num">06</span>
-          <h3>יזם ותיק ומנוסה</h3>
-          <p>הפרויקט מוקם על ידי D. Zavos Group – קבוצת פיתוח ובנייה מוכרת בלימסול.</p>
+          <h3 data-i18n="invest.c6t">יזם ותיק ומנוסה</h3>
+          <p data-i18n="invest.c6">הפרויקט מוקם על ידי D. Zavos Group – קבוצת פיתוח ובנייה מוכרת בלימסול.</p>
         </article>
       </div>
     </div>
@@ -155,16 +163,16 @@
     <div class="container">
       <div class="section-head">
         <span class="eyebrow dark">Bright Spaces for Everyday Comfort</span>
-        <h2>חללים מוארים לנוחות יומיומית</h2>
+        <h2 data-i18n="gallery.title">חללים מוארים לנוחות יומיומית</h2>
       </div>
       <div class="gallery">
-        <button class="g-item g-wide" data-src="assets/img/exterior.jpg"><img src="assets/img/exterior.jpg" alt="הדמיית הבניין" loading="lazy"></button>
-        <button class="g-item" data-src="assets/img/kitchen.jpg"><img src="assets/img/kitchen.jpg" alt="הדמיית מטבח וסלון" loading="lazy"></button>
-        <button class="g-item" data-src="assets/img/living.jpg"><img src="assets/img/living.jpg" alt="הדמיית סלון עם מרפסת" loading="lazy"></button>
-        <button class="g-item" data-src="assets/img/lounge.jpg"><img src="assets/img/lounge.jpg" alt="הדמיית חלל מגורים" loading="lazy"></button>
-        <button class="g-item" data-src="assets/img/bedroom.jpg"><img src="assets/img/bedroom.jpg" alt="הדמיית חדר שינה" loading="lazy"></button>
-        <button class="g-item g-wide" data-src="assets/img/night.jpg"><img src="assets/img/night.jpg" alt="הדמיית הבניין בלילה" loading="lazy"></button>
-        <button class="g-item" data-src="assets/img/sunset.jpg"><img src="assets/img/sunset.jpg" alt="הדמיית הבניין בשקיעה" loading="lazy"></button>
+        <button class="g-item g-wide" data-src="assets/img/exterior.jpg"><img src="assets/img/exterior.jpg" alt="Building exterior render" loading="lazy"></button>
+        <button class="g-item" data-src="assets/img/kitchen.jpg"><img src="assets/img/kitchen.jpg" alt="Kitchen and living room render" loading="lazy"></button>
+        <button class="g-item" data-src="assets/img/living.jpg"><img src="assets/img/living.jpg" alt="Living room with balcony render" loading="lazy"></button>
+        <button class="g-item" data-src="assets/img/lounge.jpg"><img src="assets/img/lounge.jpg" alt="Living space render" loading="lazy"></button>
+        <button class="g-item" data-src="assets/img/bedroom.jpg"><img src="assets/img/bedroom.jpg" alt="Bedroom render" loading="lazy"></button>
+        <button class="g-item g-wide" data-src="assets/img/night.jpg"><img src="assets/img/night.jpg" alt="Building at night render" loading="lazy"></button>
+        <button class="g-item" data-src="assets/img/sunset.jpg"><img src="assets/img/sunset.jpg" alt="Building at sunset render" loading="lazy"></button>
       </div>
     </div>
   </section>
@@ -174,19 +182,19 @@
     <div class="container split split-reverse">
       <div class="split-text">
         <span class="eyebrow dark">Everything You Need Within Reach</span>
-        <h2>הכל במרחק נגיעה</h2>
-        <p>The Mews Residences ממוקם בלב שכונת Mesa Geitonia בלימסול – כתובת מרכזית עם כל מה שצריך בקרבת מקום. חיבור מצוין לכל חלקי העיר הופך את שגרת היום-יום לפשוטה.</p>
+        <h2 data-i18n="loc.title">הכל במרחק נגיעה</h2>
+        <p data-i18n="loc.p">The Mews Residences ממוקם בלב שכונת Mesa Geitonia בלימסול – כתובת מרכזית עם כל מה שצריך בקרבת מקום. חיבור מצוין לכל חלקי העיר הופך את שגרת היום-יום לפשוטה.</p>
         <ul class="distances">
-          <li><b>50 מ'</b><span>משירותים ומסחר</span></li>
-          <li><b>10 מ'</b><span>מתחבורה ציבורית</span></li>
-          <li><b>1.3 ק"מ</b><span>מבית ספר</span></li>
-          <li><b>1.5 ק"מ</b><span>מחוף הים</span></li>
-          <li><b>14 ק"מ</b><span>מאזור הנופש</span></li>
-          <li><b>62 ק"מ</b><span>משדה התעופה</span></li>
+          <li><b data-i18n="loc.d1v">50 מ'</b><span data-i18n="loc.d1">משירותים ומסחר</span></li>
+          <li><b data-i18n="loc.d2v">10 מ'</b><span data-i18n="loc.d2">מתחבורה ציבורית</span></li>
+          <li><b data-i18n="loc.d3v">1.3 ק"מ</b><span data-i18n="loc.d3">מבית ספר</span></li>
+          <li><b data-i18n="loc.d4v">1.5 ק"מ</b><span data-i18n="loc.d4">מחוף הים</span></li>
+          <li><b data-i18n="loc.d5v">14 ק"מ</b><span data-i18n="loc.d5">מאזור הנופש</span></li>
+          <li><b data-i18n="loc.d6v">62 ק"מ</b><span data-i18n="loc.d6">משדה התעופה</span></li>
         </ul>
       </div>
       <div class="split-media">
-        <img src="assets/img/aerial.jpg" alt="מבט אווירי על מיקום הפרויקט בלימסול" loading="lazy">
+        <img src="assets/img/aerial.jpg" alt="Aerial view of the project location in Limassol" loading="lazy">
       </div>
     </div>
   </section>
@@ -196,12 +204,12 @@
     <div class="container">
       <div class="section-head">
         <span class="eyebrow dark">How It Works</span>
-        <h2>איך זה עובד?</h2>
+        <h2 data-i18n="steps.title">איך זה עובד?</h2>
       </div>
       <ol class="steps">
-        <li><span>1</span><h3>משאירים פרטים</h3><p>יועץ מטעמנו יחזור אליכם עם מחירון, תוכניות ופרטים מלאים.</p></li>
-        <li><span>2</span><h3>בוחרים דירה</h3><p>בוחרים את הדירה, הקומה והכיוון המתאימים לכם.</p></li>
-        <li><span>3</span><h3>משלמים €30,000</h3><p>מבטיחים את הדירה בתשלום של €30,000 בלבד.</p></li>
+        <li><span>1</span><h3 data-i18n="steps.s1t">משאירים פרטים</h3><p data-i18n="steps.s1">יועץ מטעמנו יחזור אליכם עם מחירון, תוכניות ופרטים מלאים.</p></li>
+        <li><span>2</span><h3 data-i18n="steps.s2t">בוחרים דירה</h3><p data-i18n="steps.s2">בוחרים את הדירה, הקומה והכיוון המתאימים לכם.</p></li>
+        <li><span>3</span><h3 data-i18n="steps.s3t">משלמים €30,000</h3><p data-i18n="steps.s3">מבטיחים את הדירה בתשלום של €30,000 בלבד.</p></li>
       </ol>
     </div>
   </section>
@@ -211,28 +219,28 @@
     <div class="container narrow">
       <div class="section-head">
         <span class="eyebrow dark">FAQ</span>
-        <h2>שאלות נפוצות</h2>
+        <h2 data-i18n="faq.title">שאלות נפוצות</h2>
       </div>
       <div class="faq">
         <details>
-          <summary>היכן ממוקם הפרויקט?</summary>
-          <p>הפרויקט ממוקם בשכונת Mesa Geitonia בלימסול, קפריסין – 50 מטר משירותים ומסחר ו-1.5 ק"מ בלבד מחוף הים.</p>
+          <summary data-i18n="faq.q1">היכן ממוקם הפרויקט?</summary>
+          <p data-i18n="faq.a1">הפרויקט ממוקם בשכונת Mesa Geitonia בלימסול, קפריסין – 50 מטר משירותים ומסחר ו-1.5 ק"מ בלבד מחוף הים.</p>
         </details>
         <details>
-          <summary>כמה צריך לשלם כדי להיכנס לפרויקט?</summary>
-          <p>משלמים רק €30,000 ומבטיחים את הדירה. את פרטי פריסת התשלומים המלאה תקבלו מהיועץ שלנו.</p>
+          <summary data-i18n="faq.q2">כמה צריך לשלם כדי להיכנס לפרויקט?</summary>
+          <p data-i18n="faq.a2">משלמים רק €30,000 ומבטיחים את הדירה. את פרטי פריסת התשלומים המלאה תקבלו מהיועץ שלנו.</p>
         </details>
         <details>
-          <summary>אילו דירות יש בפרויקט?</summary>
-          <p>הפרויקט כולל 30 דירות של 2 חדרי שינה בבניין בן חמש קומות, עם מרפסות, אור טבעי וגימורים איכותיים.</p>
+          <summary data-i18n="faq.q3">אילו דירות יש בפרויקט?</summary>
+          <p data-i18n="faq.a3">הפרויקט כולל 30 דירות של 2 חדרי שינה בבניין בן חמש קומות, עם מרפסות, אור טבעי וגימורים איכותיים.</p>
         </details>
         <details>
-          <summary>האם ישראלים יכולים לרכוש דירה בקפריסין?</summary>
-          <p>כן. קפריסין היא חברה באיחוד האירופי ורוכשים זרים, כולל ישראלים, יכולים לרכוש בה נדל"ן. נשמח ללוות אתכם בכל שלבי התהליך.</p>
+          <summary data-i18n="faq.q4">האם ישראלים יכולים לרכוש דירה בקפריסין?</summary>
+          <p data-i18n="faq.a4">כן. קפריסין היא חברה באיחוד האירופי ורוכשים זרים, כולל ישראלים, יכולים לרכוש בה נדל"ן. נשמח ללוות אתכם בכל שלבי התהליך.</p>
         </details>
         <details>
-          <summary>האם הדירה מתאימה להשכרה?</summary>
-          <p>כן. דירות 2 חדרי שינה במיקום מרכזי בלימסול נהנות מביקוש גבוה להשכרה, הן לטווח ארוך והן לטווח קצר.</p>
+          <summary data-i18n="faq.q5">האם הדירה מתאימה להשכרה?</summary>
+          <p data-i18n="faq.a5">כן. דירות 2 חדרי שינה במיקום מרכזי בלימסול נהנות מביקוש גבוה להשכרה, הן לטווח ארוך והן לטווח קצר.</p>
         </details>
       </div>
     </div>
@@ -241,29 +249,29 @@
   <!-- Final CTA -->
   <section class="cta" id="contact">
     <div class="cta-bg" style="background-image:url('assets/img/night.jpg')"></div>
-    <div class="hero-overlay"></div>
+    <div class="cta-overlay"></div>
     <div class="container cta-inner">
       <div class="cta-text">
         <img src="assets/img/logo-white.svg" alt="The Mews Residences" class="cta-logo">
-        <h2>הדירות הראשונות נמכרות במחירי השקה</h2>
-        <p>משלמים רק <strong>€30,000</strong> ומבטיחים דירה בלב לימסול. השאירו פרטים ונחזור אליכם בהקדם.</p>
+        <h2 data-i18n="cta.title">הדירות הראשונות נמכרות במחירי השקה</h2>
+        <p data-i18n="cta.p">משלמים רק <strong>€30,000</strong> ומבטיחים דירה בלב לימסול. השאירו פרטים ונחזור אליכם בהקדם.</p>
       </div>
       <div class="form-card">
-        <h2>לקבלת מחירון ותוכניות</h2>
-        <form class="lead-form" novalidate>
+        <h2 data-i18n="cta.formTitle">לקבלת מחירון ותוכניות</h2>
+        <form class="lead-form" id="contact-form" novalidate>
           <label class="field">
-            <span class="sr-only">שם מלא</span>
-            <input type="text" name="name" placeholder="שם מלא *" autocomplete="name" required>
+            <span class="sr-only" data-i18n="form.name">שם מלא</span>
+            <input type="text" id="contact-name" name="name" placeholder="שם מלא *" data-i18n-ph="form.namePh" autocomplete="name" required>
           </label>
           <label class="field">
-            <span class="sr-only">טלפון</span>
-            <input type="tel" name="phone" placeholder="טלפון *" autocomplete="tel" inputmode="tel" required>
+            <span class="sr-only" data-i18n="form.phone">טלפון</span>
+            <input type="tel" id="contact-phone" name="phone" placeholder="טלפון *" data-i18n-ph="form.phonePh" autocomplete="tel" inputmode="tel" required>
           </label>
           <label class="consent">
-            <input type="checkbox" name="consent" required>
-            <span>אני מאשר/ת קבלת פניות ומידע שיווקי</span>
+            <input type="checkbox" id="contact-consent" name="consent" required>
+            <span data-i18n="form.consent">אני מאשר/ת קבלת פניות ומידע שיווקי</span>
           </label>
-          <button type="submit" class="btn btn-block">שלחו לי פרטים</button>
+          <button type="submit" class="btn btn-block" data-i18n="form.submit">שלחו לי פרטים</button>
           <p class="form-msg" role="status" aria-live="polite"></p>
         </form>
       </div>
@@ -275,23 +283,24 @@
     <div class="container">
       <img src="assets/img/logo-white.svg" alt="The Mews Residences" class="footer-logo">
       <p class="footer-dev">Developed by D. Zavos Group · Limassol, Cyprus</p>
-      <p class="disclaimer">המידע וההדמיות בדף זה הינם להמחשה בלבד ואינם מהווים מסמך מחייב או הצעה. התוצר הסופי עשוי להשתנות. The Mews Residences הוא שם שיווקי.</p>
+      <p class="disclaimer" data-i18n="footer.disclaimer">המידע וההדמיות בדף זה הינם להמחשה בלבד ואינם מהווים מסמך מחייב או הצעה. התוצר הסופי עשוי להשתנות. The Mews Residences הוא שם שיווקי.</p>
       <p class="copy">© <span id="year"></span> The Mews Residences</p>
     </div>
   </footer>
 
   <!-- Floating WhatsApp + mobile CTA -->
-  <a class="whatsapp" id="whatsapp" href="#" target="_blank" rel="noopener" aria-label="שלחו לנו הודעה בוואטסאפ">
+  <a class="whatsapp" id="whatsapp" href="#" target="_blank" rel="noopener" aria-label="WhatsApp">
     <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 7L3 29l6.4-2c2 1.1 4.3 1.7 6.6 1.7 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.4c-2.1 0-4.1-.6-5.9-1.7l-.4-.3-3.8 1.2 1.2-3.7-.3-.4c-1.2-1.8-1.9-3.9-1.9-6 0-5.9 4.9-10.6 11-10.6s11 4.8 11 10.6-4.9 10.9-10.9 10.9zm6-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1c-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.3-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6.1-.2.1-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4s-1.2 1.1-1.2 2.7 1.2 3.2 1.4 3.4c.2.2 2.4 3.6 5.8 5 .8.3 1.4.5 1.9.7.8.3 1.6.2 2.2.1.7-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.5z"/></svg>
   </a>
-  <a href="#contact" class="mobile-cta">משלמים רק €30,000 – לפרטים</a>
+  <a href="#contact" class="mobile-cta" data-i18n="mobileCta">משלמים רק €30,000 – לפרטים</a>
 
   <!-- Lightbox -->
   <div class="lightbox" id="lightbox" hidden>
-    <button class="lb-close" aria-label="סגירה">×</button>
+    <button class="lb-close" aria-label="Close">×</button>
     <img src="" alt="">
   </div>
 
+  <script src="assets/js/i18n.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>
