@@ -9,6 +9,7 @@
   --espresso: #22170e;
   --olive: #3c4733;
   --olive-dark: #2f3828;
+  --olive-mist: #d7dbcc;
   --ink: #2b2219;
   --muted: #6f655d;
   --white: #fff;
@@ -186,6 +187,9 @@ html[dir="ltr"] .field input[type="tel"] { direction: ltr; text-align: left; }
 .section-head h2, .split-text h2 { font-size: clamp(1.9rem, 3.4vw, 2.8rem); }
 .section-head p { color: var(--muted); font-size: 1.1rem; }
 .section-brown .section-head p { color: var(--beige); }
+.section-olive { background: var(--olive); color: var(--white); }
+.section-olive .eyebrow { color: var(--sand); }
+.section-olive .split-text p { color: var(--olive-mist); }
 .section-icon { width: 54px; margin-bottom: 18px; }
 
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
@@ -214,6 +218,11 @@ html[dir="ltr"] .field input[type="tel"] { direction: ltr; text-align: left; }
 .distances { list-style: none; padding: 0; margin: 2rem 0 0; display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(70,49,31,.15); }
 .distances li { background: var(--beige); padding: 18px 24px; display: flex; flex-direction: column; border-inline-start: 2px solid transparent; transition: border-color .25s; }
 .distances li:hover { border-inline-start-color: var(--olive); }
+.section-olive .distances { background: rgba(215,219,204,.22); }
+.section-olive .distances li { background: var(--olive); }
+.section-olive .distances li:hover { border-inline-start-color: var(--sand); }
+.section-olive .distances b { color: var(--white); }
+.section-olive .distances span { color: var(--olive-mist); }
 .distances b { font-family: var(--serif); font-weight: 500; font-size: 1.6rem; color: var(--brown); line-height: 1.2; }
 .distances span { color: var(--muted); }
 
