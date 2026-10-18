@@ -8,7 +8,7 @@ const I18N_EN = {
   "nav.gallery": "Gallery",
   "nav.location": "Location",
   "nav.faq": "FAQ",
-  "nav.cta": "Get Price List",
+  "nav.cta": "Leave Your Details",
 
   "hero.l1": "Invest today",
   "hero.l2": "in the heart of Limassol, Cyprus",

@@ -65,6 +65,8 @@ p { margin: 0 0 1em; }
 }
 .btn:hover { background: var(--brown-dark); transform: translateY(-1px); }
 .btn-small { padding: .55em 1.4em; font-size: .9rem; }
+.btn-icon { display: inline-flex; align-items: center; gap: .55em; }
+.btn-icon svg { width: 1.15em; height: 1.15em; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 .btn-block { width: 100%; }
 
 /* Header (hidden over the hero, slides in after it) */
