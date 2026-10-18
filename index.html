@@ -238,31 +238,44 @@
     </div>
   </section>
 
-  <!-- Final CTA -->
+  <!-- Final CTA (mirrors the hero layout over a fixed night render) -->
   <section class="cta" id="contact">
-    <div class="cta-bg" style="background-image:url('assets/img/night.jpg')"></div>
-    <div class="cta-overlay"></div>
+    <div class="cta-bg" aria-hidden="true"></div>
+    <div class="cta-overlay" aria-hidden="true"></div>
     <div class="container cta-inner">
-      <div class="cta-text">
-        <img src="assets/img/logo-white.svg" alt="The Mews Residences" class="cta-logo">
-        <h2 data-i18n="cta.title">הדירות הראשונות נמכרות במחירי השקה</h2>
-        <p data-i18n="cta.p">משלמים רק <strong>€30,000</strong> ומבטיחים דירה בלב לימסול. השאירו פרטים ונחזור אליכם בהקדם.</p>
+      <h2 class="cta-title">
+        <span class="h-light" data-i18n="cta.l1">הדירות הראשונות</span>
+        <span class="h-bold" data-i18n="cta.l2">נמכרות במחירי השקה</span>
+      </h2>
+      <div class="price-box">
+        <span class="pb-text">
+          <span data-i18n="hero.pay">משלמים רק</span>
+          <span data-i18n="hero.secure">ומבטיחים דירה</span>
+        </span>
+        <b>€30,000</b>
       </div>
-      <div class="form-card">
-        <h2 data-i18n="cta.formTitle">לקבלת מחירון ותוכניות</h2>
-        <form class="lead-form" id="contact-form" novalidate>
-          <label class="field">
-            <span class="sr-only" data-i18n="form.name">שם מלא</span>
-            <input type="text" id="contact-name" name="name" placeholder="שם מלא *" data-i18n-ph="form.namePh" autocomplete="name" required>
-          </label>
-          <label class="field">
-            <span class="sr-only" data-i18n="form.phone">טלפון</span>
-            <input type="tel" id="contact-phone" name="phone" placeholder="טלפון *" data-i18n-ph="form.phonePh" autocomplete="tel" inputmode="tel" required>
-          </label>
-          <button type="submit" class="btn btn-block" data-i18n="form.submit">שלחו לי פרטים</button>
-          <p class="consent" data-i18n="form.consent">בשליחת הפרטים אני מאשר/ת קבלת פניות ומידע שיווקי</p>
-          <p class="form-msg" role="status" aria-live="polite"></p>
-        </form>
+      <p class="hero-tag" data-i18n="hero.tag">מחירי השקה לרוכשים הראשונים · 30 דירות 2 חדרי שינה בלבד</p>
+      <p class="hero-cta-label" data-i18n="hero.formLabel">לשיחה עם נציג/ה מטעם הפרויקט השאירו פרטים:</p>
+      <form class="lead-form hero-form" id="contact-form" novalidate>
+        <label class="field">
+          <span class="sr-only" data-i18n="form.name">שם מלא</span>
+          <input type="text" id="contact-name" name="name" placeholder="שם מלא *" data-i18n-ph="form.namePh" autocomplete="name" required>
+        </label>
+        <label class="field">
+          <span class="sr-only" data-i18n="form.phone">טלפון</span>
+          <input type="tel" id="contact-phone" name="phone" placeholder="טלפון *" data-i18n-ph="form.phonePh" autocomplete="tel" inputmode="tel" required>
+        </label>
+        <button type="submit" class="btn-send" data-i18n="form.send">שליחה</button>
+        <p class="consent" data-i18n="form.consent">בשליחת הפרטים אני מאשר/ת קבלת פניות ומידע שיווקי</p>
+        <p class="form-msg" role="status" aria-live="polite"></p>
+      </form>
+      <div class="hero-brands">
+        <img src="assets/img/logo-white.svg" alt="The Mews Residences" class="hero-logo">
+        <span class="brands-divider" aria-hidden="true"></span>
+        <div class="hero-dev">
+          <img src="assets/img/zavos-logo.png" alt="D. Zavos Group – Land &amp; Building Developers" class="dev-logo">
+          <p data-i18n="hero.dev">היזם הגדול בקפריסין<br>למעלה מ-<b>500</b> פרויקטים בלימסול · למעלה מ-<b>45</b> שנות מוניטין</p>
+        </div>
       </div>
     </div>
   </section>

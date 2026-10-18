@@ -24,7 +24,6 @@ const I18N_EN = {
   "form.namePh": "Full name *",
   "form.phonePh": "Phone *",
   "form.send": "Send",
-  "form.submit": "Send Me Details",
   "form.consent": "By sending your details you agree to be contacted and to receive marketing information",
   "form.invalid": "Please enter a valid name and phone number",
   "form.ok": "Thank you! We received your details and will be in touch shortly.",
@@ -80,9 +79,9 @@ const I18N_EN = {
   "faq.q5": "Is the apartment suitable for renting out?",
   "faq.a5": "Yes. Two-bedroom apartments in central Limassol are in high demand for both long-term and short-term rentals.",
 
-  "cta.title": "The First Apartments Are Selling at Launch Prices",
-  "cta.p": "Pay only <strong>€30,000</strong> to secure an apartment in the heart of Limassol. Leave your details and we will get back to you shortly.",
-  "cta.formTitle": "Get the Price List and Floor Plans",
+
+  "cta.l1": "The first apartments",
+  "cta.l2": "are selling at launch prices",
 
   "footer.privacy": "Privacy Policy",
   "footer.a11y": "Accessibility Statement",
