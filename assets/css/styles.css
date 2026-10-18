@@ -122,10 +122,10 @@ p { margin: 0 0 1em; }
 .hero-form .field input { background: var(--beige-light); border-color: transparent; padding: 15px 18px; }
 .hero-form .field input:focus { border-color: var(--sand); }
 .btn-send {
-  background: var(--sand); color: var(--espresso); border: 0; padding: 0 30px;
+  background: var(--olive); color: var(--white); border: 0; padding: 0 30px;
   font: 600 1.05rem var(--sans); border-radius: var(--radius); cursor: pointer; transition: background .2s;
 }
-.btn-send:hover { background: var(--beige); }
+.btn-send:hover { background: var(--olive-dark); }
 .btn-send:disabled { opacity: .6; }
 .hero-form .consent, .hero-form .form-msg { grid-column: 1 / -1; }
 .hero-form .consent { color: var(--sand); }
