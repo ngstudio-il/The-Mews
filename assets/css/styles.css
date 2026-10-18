@@ -268,8 +268,8 @@ html[dir="ltr"] .project.pending .project-media { clip-path: inset(0 100% 0 0); 
 .faq details[open] summary::after { transform: translateY(-50%) rotate(45deg); }
 .faq details p { padding: 0 24px 22px; margin: 0; color: var(--muted); font-size: 1.12rem; }
 /* faint elevation drawing pinned to the side of the viewport while the FAQ scrolls past */
-#faq { background: url("../img/elevation-faint.svg") no-repeat fixed left -40px center / auto 78vh; }
-html[dir="ltr"] #faq { background-position: right -40px center; }
+#faq { background: url("../img/elevation-faint.svg") no-repeat fixed right -40px center / auto 78vh; }
+html[dir="ltr"] #faq { background-position: left -40px center; }
 @media (hover: none) { #faq { background-attachment: scroll; background-size: auto 60%; } }
 
 /* CTA: same composition as the hero, over a fixed (parallax) night render */
