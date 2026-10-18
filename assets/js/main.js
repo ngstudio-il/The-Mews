@@ -143,6 +143,11 @@ document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") lb.hidden = true;
 });
 
+// Page width without the scrollbar, for aligning full-bleed layouts to .container
+const setPageWidth = () => document.documentElement.style.setProperty("--page-w", `${document.documentElement.clientWidth}px`);
+setPageWidth();
+window.addEventListener("resize", setPageWidth);
+
 // Project section: image wipes in, text panel rises over it (only if it starts below the fold)
 const project = document.querySelector(".project");
 if (project && "IntersectionObserver" in window && !matchMedia("(prefers-reduced-motion: reduce)").matches

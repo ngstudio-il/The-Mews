@@ -202,8 +202,8 @@ html[dir="ltr"] .field input[type="tel"] { direction: ltr; text-align: left; }
 .project-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 2s cubic-bezier(.2, .7, .2, 1); }
 .project-panel {
   position: relative; z-index: 1; margin-block: 80px;
-  /* ends on the header's edge (1600px wide container, 32px gutter) */
-  margin-inline-start: -110px; margin-inline-end: max(32px, calc((100vw - 1600px) / 2));
+  /* ends on the edge of the hero's .container (1200px, 16px gutter); --page-w excludes the scrollbar */
+  margin-inline-start: -110px; margin-inline-end: max(16px, calc((var(--page-w, 100vw) - 1200px) / 2));
   background: var(--beige-light); padding: 64px clamp(40px, 5vw, 96px);
   transition: opacity .9s ease .55s, transform .9s ease .55s;
 }
