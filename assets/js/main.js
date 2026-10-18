@@ -143,6 +143,20 @@ document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") lb.hidden = true;
 });
 
+// Project section: image wipes in, text panel rises over it (only if it starts below the fold)
+const project = document.querySelector(".project");
+if (project && "IntersectionObserver" in window && !matchMedia("(prefers-reduced-motion: reduce)").matches
+    && project.getBoundingClientRect().top > window.innerHeight) {
+  project.classList.add("pending");
+  const pio = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) {
+      project.classList.remove("pending");
+      pio.disconnect();
+    }
+  }, { threshold: 0.25 });
+  pio.observe(project);
+}
+
 // Reveal on scroll
 const revealTargets = document.querySelectorAll(".section-head, .split-text, .split-media, .card, .g-item, .faq details, .cta-text");
 if ("IntersectionObserver" in window) {
