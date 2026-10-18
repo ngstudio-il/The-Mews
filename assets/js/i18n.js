@@ -25,8 +25,8 @@ const I18N_EN = {
   "form.phonePh": "Phone *",
   "form.send": "Send",
   "form.submit": "Send Me Details",
-  "form.consent": "I agree to be contacted and to receive marketing information",
-  "form.invalid": "Please enter a valid name and phone number and accept the terms",
+  "form.consent": "By sending your details you agree to be contacted and to receive marketing information",
+  "form.invalid": "Please enter a valid name and phone number",
   "form.ok": "Thank you! We received your details and will be in touch shortly.",
   "form.error": "Something went wrong. Please try again or contact us on WhatsApp.",
 
@@ -97,7 +97,7 @@ const I18N_EN = {
 };
 
 const I18N_HE = {
-  "form.invalid": "נא למלא שם וטלפון תקינים ולאשר את התנאים",
+  "form.invalid": "נא למלא שם וטלפון תקינים",
   "form.ok": "תודה! הפרטים התקבלו ונחזור אליכם בהקדם.",
   "form.error": "אירעה שגיאה בשליחה, נסו שוב או פנו אלינו בוואטסאפ.",
 };

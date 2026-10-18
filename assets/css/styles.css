@@ -126,8 +126,7 @@ p { margin: 0 0 1em; }
 .btn-send:hover { background: var(--beige); }
 .btn-send:disabled { opacity: .6; }
 .hero-form .consent, .hero-form .form-msg { grid-column: 1 / -1; }
-.hero-form .consent { color: var(--beige); font-size: .92rem; }
-.hero-form .consent.invalid { color: #f2a59c; }
+.hero-form .consent { color: var(--sand); }
 .hero-form .form-msg.ok { color: #a9d8b2; }
 .hero-form .form-msg.err { color: #f2a59c; }
 .hero-brands { display: flex; align-items: center; justify-content: center; gap: 28px; margin-top: 26px; }
@@ -164,9 +163,7 @@ html[dir="ltr"] .cta-overlay { transform: scaleX(-1); }
 html[dir="ltr"] .field input[type="tel"] { direction: ltr; text-align: left; }
 .field input:focus { outline: none; border-color: var(--brown); background: var(--white); }
 .field input.invalid { border-color: #b3261e; }
-.consent { display: flex; gap: 8px; align-items: flex-start; font-size: .85rem; color: var(--muted); }
-.consent input { margin-top: .35em; accent-color: var(--olive); }
-.consent.invalid { color: #b3261e; }
+.consent { margin: 0; font-size: .82rem; line-height: 1.5; color: var(--muted); text-align: center; }
 .form-msg { margin: 0; min-height: 1.4em; text-align: center; font-size: .95rem; }
 .form-msg.ok { color: #2e6b3a; }
 .form-msg.err { color: #b3261e; }

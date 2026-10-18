@@ -84,16 +84,14 @@ document.querySelectorAll(".lead-form").forEach((form) => {
     e.preventDefault();
     const name = form.elements.name;
     const phone = form.elements.phone;
-    const consent = form.elements.consent;
 
     const okName = name.value.trim().length >= 2;
     const okPhone = /^[+\d][\d\s-]{7,}$/.test(phone.value.trim());
     name.classList.toggle("invalid", !okName);
     phone.classList.toggle("invalid", !okPhone);
-    consent.closest(".consent").classList.toggle("invalid", !consent.checked);
 
     msg.className = "form-msg";
-    if (!okName || !okPhone || !consent.checked) {
+    if (!okName || !okPhone) {
       msg.textContent = t("form.invalid");
       msg.classList.add("err");
       return;
