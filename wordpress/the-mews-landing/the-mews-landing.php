@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       The Mews – דף נחיתה
  * Description:       דף הנחיתה של The Mews Residences (לימסול, קפריסין) עם עריכת כל התוכן לפי אזורים, עברית ואנגלית, שמירת לידים, תפריט נגישות ועמודי מדיניות פרטיות והצהרת נגישות.
- * Version:           1.1.0
+ * Version:           1.1.1
  * Requires at least: 6.0
  * Requires PHP:      7.4
  * Text Domain:       the-mews-landing
@@ -10,7 +10,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'TML_VERSION', '1.1.0' );
+define( 'TML_VERSION', '1.1.1' );
 define( 'TML_DIR', plugin_dir_path( __FILE__ ) );
 define( 'TML_URL', plugin_dir_url( __FILE__ ) );
 define( 'TML_TEMPLATE_LANDING', 'tml-landing' );
