@@ -32,3 +32,12 @@
 ```
 wordpress/build.sh   # -> wordpress/dist/the-mews-landing.zip
 ```
+
+## עריכה מרחוק (API)
+מגרסה 1.1.0 יש לתוסף API מאובטח לעריכת התוכן, למשל דרך Claude:
+
+- `GET /wp-json/tml/v1/content`: כל התוכן לפי אזורים.
+- `POST /wp-json/tml/v1/content`: עדכון השדות שנשלחו בלבד, לדוגמה `{"hero": {"l2": {"he": "...", "en": "..."}}}`.
+- `POST /wp-json/tml/v1/content` עם `{"__reset": "hero"}`: החזרת אזור לברירת המחדל.
+
+הגישה מותרת רק למנהלי אתר, עם סיסמת אפליקציה (משתמשים ← פרופיל ← Application Passwords) ובחיבור HTTPS.
